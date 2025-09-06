@@ -49,9 +49,7 @@ function LeadForm({ onAddLead }) {
         Capture New Lead
       </h2>
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Grid for larger screens */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Name */}
           <div>
             <label className="block font-medium text-gray-700 mb-1">
               Name
@@ -71,7 +69,6 @@ function LeadForm({ onAddLead }) {
             )}
           </div>
 
-          {/* Email */}
           <div>
             <label className="block font-medium text-gray-700 mb-1">
               Email
@@ -92,7 +89,7 @@ function LeadForm({ onAddLead }) {
           </div>
         </div>
 
-        {/* Phone */}
+
         <div>
           <label className="block font-medium text-gray-700 mb-1">
             Phone
@@ -112,7 +109,6 @@ function LeadForm({ onAddLead }) {
           )}
         </div>
 
-        {/* Notes */}
         <div>
           <label className="block font-medium text-gray-700 mb-1">
             Notes

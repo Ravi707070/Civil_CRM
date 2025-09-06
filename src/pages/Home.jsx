@@ -3,19 +3,15 @@ import Navbar from "../components/Navbar";
 function Home() {
   return (
     <div className="min-h-screen  bg-gradient-to-br from-blue-50 to-blue-100 flex flex-col">
-      {/* Navbar at top */}
       <header className="w-full mt-5">
         <Navbar />
       </header>
 
-      {/* Hero Section */}
       <main className="flex flex-col mt-32 items-center justify-center flex-grow text-center px-6">
-        {/* Brand Name */}
         <h1 className="text-5xl md:text-6xl font-extrabold text-blue-700 mb-4">
           Civil Guruji CRM
         </h1>
 
-        {/* Tagline */}
         <p className="text-lg md:text-xl text-gray-700 max-w-2xl mb-8">
           Welcome to <span className="font-semibold">Civil Guruji CRM</span> – 
           a simple and powerful tool to manage your leads efficiently. 
@@ -23,7 +19,6 @@ function Home() {
           with ease and clarity.
         </p>
 
-        {/* Call to Action */}
         <a
           href="/leads"
           className="px-8 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 hover:shadow-xl transition duration-300 font-medium"
@@ -32,7 +27,6 @@ function Home() {
         </a>
             
       </main>
-      {/* About Section */}
       <section
         id="about"
         className="bg-gradient-to-r mt-32 from-white to-indigo-50 py-16 px-6 md:px-20 text-center shadow-inner"
@@ -50,7 +44,6 @@ function Home() {
         </p>
       </section>
 
-      {/* Footer (Optional) */}
       <footer className="py-4 mt-5 text-center text-sm text-gray-500">
         © {new Date().getFullYear()} Civil Guruji CRM. All rights reserved.
       </footer>

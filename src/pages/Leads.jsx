@@ -15,12 +15,10 @@ function Leads() {
         Lead Management
       </h1>
 
-      {/* Lead Form */}
       <div className="w-full max-w-md bg-white shadow-md rounded-lg p-6 mb-8">
         <LeadForm onAddLead={handleAddLead} />
       </div>
 
-      {/* Lead List */}
       <div className="w-full max-w-3xl">
         <LeadList leads={leads} />
       </div>
