@@ -1,29 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LeadForm from "../components/LeadForm";
 import LeadList from "../components/LeadList";
+import Navbar from "../components/Navbar";
 
 function Leads() {
-  const [leads, setLeads] = useState([]);
+    const [leads, setLeads] = useState([]);
 
-  const handleAddLead = (newLead) => {
-    setLeads([...leads, newLead]);
-  };
+    // Load from localStorage on mount
+    useEffect(() => {
+        const storedLeads = JSON.parse(localStorage.getItem("leads")) || [];
+        setLeads(storedLeads);
+    }, []);
 
-  return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
-      <h1 className="text-3xl font-bold text-blue-600 mb-6">
-        Lead Management
-      </h1>
+    // Save to localStorage whenever leads change
+    useEffect(() => {
+        localStorage.setItem("leads", JSON.stringify(leads));
+    }, [leads]);
 
-      <div className="w-full max-w-md bg-white shadow-md rounded-lg p-6 mb-8">
-        <LeadForm onAddLead={handleAddLead} />
-      </div>
+    // Add new lead
+    const handleAddLead = (lead) => {
+        setLeads([...leads, { id: Date.now(), ...lead }]);
+    };
 
-      <div className="w-full max-w-3xl">
-        <LeadList leads={leads} />
-      </div>
-    </div>
-  );
+    // Delete lead
+    const handleDeleteLead = (id) => {
+        setLeads(leads.filter((lead) => lead.id !== id));
+    };
+
+    return (
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 py-10 px-6">
+            <header className="w-full mb-10">
+                <Navbar />
+            </header>
+            <div className="max-w-5xl mx-auto space-y-10">
+                {/* Lead Capture Form */}
+                <LeadForm onAddLead={handleAddLead} />
+
+                {/* Lead List */}
+                <LeadList leads={leads} onDeleteLead={handleDeleteLead} />
+            </div>
+        </div>
+    );
 }
 
 export default Leads;
