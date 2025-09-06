@@ -18,7 +18,6 @@ export default function Navbar() {
         <Link to="/" className="hover:text-blue-600 transition">Home</Link>
         <Link to="/leads" className="hover:text-blue-600 transition">Leads</Link>
         <a href="#about" className="hover:text-blue-600 transition">About</a>
-        <a href="#contact" className="hover:text-blue-600 transition">Contact</a>
       </div>
 
       {/* Desktop Buttons */}
@@ -61,9 +60,7 @@ export default function Navbar() {
           <a href="#about" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>
             About
           </a>
-          <a href="#contact" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>
-            Contact
-          </a>
+          
           <button className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-full text-sm font-medium transition">
             Login
           </button>
